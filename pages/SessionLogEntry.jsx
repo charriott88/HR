@@ -41,16 +41,20 @@ export default function SessionLogEntry() {
   const handleSave = async () => {
     if (!form.text_entry.trim()) return;
     setSaving(true);
-    const me = await base44.auth.me();
-    await base44.entities.SessionLog.create({
-      ...form,
-      project_id: projectId,
-      author_id: me.id,
-      author_name: me.full_name,
-      author_role: me.role || "",
-      energy_clarity_score: form.energy_clarity_score || undefined,
-    });
-    navigate(`/projects/${projectId}`);
+    try {
+      await base44.entities.SessionLog.create({
+        ...form,
+        project_id: projectId,
+        author_id: 'local-user',
+        author_name: '',
+        author_role: '',
+        energy_clarity_score: form.energy_clarity_score || undefined,
+      });
+      navigate(`/projects/${projectId}`);
+    } catch (e) {
+      console.error("Failed to save log", e);
+      setSaving(false);
+    }
   };
 
   return (

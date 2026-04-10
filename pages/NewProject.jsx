@@ -18,9 +18,13 @@ export default function NewProject() {
   const handleSubmit = async () => {
     if (!form.title || !form.project_type) return;
     setSaving(true);
-    const me = await base44.auth.me();
-    const proj = await base44.entities.Project.create({ ...form, owner_id: me.id, status: "active", alignment_complete: false });
-    navigate(`/projects/${proj.id}/alignment`);
+    try {
+      const proj = await base44.entities.Project.create({ ...form, owner_id: 'local-user', status: "active", alignment_complete: false });
+      navigate(`/projects/${proj.id}/alignment`);
+    } catch (e) {
+      console.error("Failed to create project", e);
+      setSaving(false);
+    }
   };
 
   const Pill = ({ value, selected, onClick }) => (

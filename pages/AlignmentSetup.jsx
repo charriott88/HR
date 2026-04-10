@@ -47,11 +47,15 @@ export default function AlignmentSetup() {
   const handleSave = async () => {
     if (!form.core_intent) return;
     setSaving(true);
-    const me = await base44.auth.me();
-    const newVersion = existing ? (existing.version || 1) + 1 : 1;
-    await base44.entities.AlignmentRecord.create({ ...form, project_id: projectId, version: newVersion, updated_by: me.email });
-    await base44.entities.Project.update(projectId, { alignment_complete: true });
-    navigate(`/projects/${projectId}`);
+    try {
+      const newVersion = existing ? (existing.version || 1) + 1 : 1;
+      await base44.entities.AlignmentRecord.create({ ...form, project_id: projectId, version: newVersion, updated_by: '' });
+      await base44.entities.Project.update(projectId, { alignment_complete: true });
+      navigate(`/projects/${projectId}`);
+    } catch (e) {
+      console.error("Failed to save alignment", e);
+      setSaving(false);
+    }
   };
 
   return (

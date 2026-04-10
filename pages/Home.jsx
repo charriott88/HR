@@ -8,29 +8,31 @@ export default function Home() {
   const [projects, setProjects] = useState([]);
   const [prompts, setPrompts] = useState([]);
   const [recentLogs, setRecentLogs] = useState([]);
-  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function load() {
-      const me = await base44.auth.me();
-      setUser(me);
-      const [projs, prpts, logs] = await Promise.all([
-        base44.entities.Project.filter({ status: "active" }, "-created_date", 5),
-        base44.entities.PromptCall.filter({ status: "active" }, "-created_date", 3),
-        base44.entities.SessionLog.list("-created_date", 5),
-      ]);
-      setProjects(projs);
-      setPrompts(prpts);
-      setRecentLogs(logs);
-      setLoading(false);
+      try {
+        const [projs, prpts, logs] = await Promise.all([
+          base44.entities.Project.filter({ status: "active" }, "-created_date", 5),
+          base44.entities.PromptCall.list("-created_date", 3),
+          base44.entities.SessionLog.list("-created_date", 5),
+        ]);
+        setProjects(projs);
+        setPrompts(prpts);
+        setRecentLogs(logs);
+      } catch (e) {
+        console.error("Failed to load home data", e);
+      } finally {
+        setLoading(false);
+      }
     }
     load();
   }, []);
 
   if (loading) return <div className="flex items-center justify-center h-48"><div className="w-6 h-6 border-2 border-border border-t-foreground rounded-full animate-spin" /></div>;
 
-  const greeting = user ? `Hello, Alice ${user.full_name?.split(" ")[0] || "there"}` : "Hello";
+  const greeting = "Hello";
 
   return (
     <div className="animate-fade-in space-y-8">

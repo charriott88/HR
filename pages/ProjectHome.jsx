@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { base44 } from "@/api/base44Client";
 import { ChevronLeft, Plus, Edit3, Calendar, Users, MessageSquare, GitBranch, FileText, Archive, Camera, Layers } from "lucide-react";
 import OrientationBadge from "../components/OrientationBadge";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 export default function ProjectHome() {
   const { projectId } = useParams();
@@ -129,8 +129,8 @@ export default function ProjectHome() {
             {upcomingDates.map(item => (
               <div key={item.id} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3">
                 <div className="text-center min-w-[36px]">
-                  <p className="text-xs text-muted-foreground">{format(new Date(item.date), "MMM")}</p>
-                  <p className="text-base font-medium text-foreground leading-none">{format(new Date(item.date), "d")}</p>
+                  <p className="text-xs text-muted-foreground">{format(parseISO(item.date), "MMM")}</p>
+                  <p className="text-base font-medium text-foreground leading-none">{format(parseISO(item.date), "d")}</p>
                 </div>
                 <div>
                   <p className="text-sm text-foreground">{item.label}</p>
