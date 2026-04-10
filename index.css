@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 54 80% 96%;
+    --foreground: 140 20% 13%;
+    --card: 54 60% 98%;
+    --card-foreground: 140 20% 13%;
+    --popover: 54 60% 98%;
+    --popover-foreground: 140 20% 13%;
+    --primary: 140 38% 38%;
+    --primary-foreground: 54 80% 97%;
+    --secondary: 54 50% 90%;
+    --secondary-foreground: 140 20% 13%;
+    --muted: 54 40% 92%;
+    --muted-foreground: 140 12% 44%;
+    --accent: 82 35% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 54 30% 84%;
+    --input: 54 30% 84%;
+    --ring: 140 38% 38%;
+    --radius: 0.75rem;
+    --sidebar-background: 54 60% 97%;
+    --sidebar-foreground: 140 20% 13%;
+    --sidebar-primary: 140 38% 38%;
+    --sidebar-primary-foreground: 54 80% 97%;
+    --sidebar-accent: 54 50% 90%;
+    --sidebar-accent-foreground: 140 20% 13%;
+    --sidebar-border: 54 30% 84%;
+    --sidebar-ring: 140 38% 38%;
+  }
+
+  .dark {
+    --background: 25 10% 8%;
+    --foreground: 30 15% 93%;
+    --card: 25 10% 11%;
+    --card-foreground: 30 15% 93%;
+    --popover: 25 10% 11%;
+    --popover-foreground: 30 15% 93%;
+    --primary: 30 15% 93%;
+    --primary-foreground: 25 10% 8%;
+    --secondary: 25 10% 16%;
+    --secondary-foreground: 30 15% 93%;
+    --muted: 25 10% 16%;
+    --muted-foreground: 30 10% 55%;
+    --accent: 24 60% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 25 10% 20%;
+    --input: 25 10% 20%;
+    --ring: 30 15% 93%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Treatment",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "orientation": {
+      "type": "string",
+      "enum": [
+        "structured",
+        "open"
+      ]
+    },
+    "version": {
+      "type": "number",
+      "default": 1
+    },
+    "concept_overview": {
+      "type": "string"
+    },
+    "movement_direction": {
+      "type": "string"
+    },
+    "visual_language": {
+      "type": "string"
+    },
+    "camera_logic": {
+      "type": "string"
+    },
+    "tone_performance": {
+      "type": "string"
+    },
+    "execution_notes": {
+      "type": "string"
+    },
+    "core_intention": {
+      "type": "string"
+    },
+    "movement_investigation": {
+      "type": "string"
+    },
+    "visual_atmosphere": {
+      "type": "string"
+    },
+    "spatial_relational": {
+      "type": "string"
+    },
+    "open_questions": {
+      "type": "string"
+    },
+    "process_direction": {
+      "type": "string"
+    },
+    "mood_shots_json": {
+      "type": "string"
+    },
+    "selected_images_json": {
+      "type": "string"
+    },
+    "created_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "orientation"
+  ]
+}

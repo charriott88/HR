@@ -1,0 +1,34 @@
+{
+  "name": "PromptCall",
+  "type": "object",
+  "properties": {
+    "creator_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "converted",
+        "archived"
+      ],
+      "default": "active"
+    },
+    "converted_project_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "intent"
+  ]
+}

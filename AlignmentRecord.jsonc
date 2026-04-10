@@ -1,0 +1,41 @@
+{
+  "name": "AlignmentRecord",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "core_intent": {
+      "type": "string"
+    },
+    "movement_principle_1": {
+      "type": "string"
+    },
+    "movement_principle_2": {
+      "type": "string"
+    },
+    "movement_principle_3": {
+      "type": "string"
+    },
+    "camera_rule": {
+      "type": "string"
+    },
+    "direction_rule": {
+      "type": "string"
+    },
+    "styling_rule": {
+      "type": "string"
+    },
+    "version": {
+      "type": "number",
+      "default": 1
+    },
+    "updated_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "core_intent"
+  ]
+}

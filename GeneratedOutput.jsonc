@@ -1,0 +1,30 @@
+{
+  "name": "GeneratedOutput",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "output_type": {
+      "type": "string",
+      "enum": [
+        "Project Summary",
+        "Process Description",
+        "Movement Direction Statement",
+        "Collaboration Overview",
+        "Development Timeline Summary"
+      ]
+    },
+    "generated_text": {
+      "type": "string"
+    },
+    "created_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "output_type",
+    "generated_text"
+  ]
+}

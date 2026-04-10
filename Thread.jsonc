@@ -1,0 +1,41 @@
+{
+  "name": "Thread",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "log_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contributing_collaborators": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_suggested": {
+      "type": "boolean",
+      "default": false
+    },
+    "keyword": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "title"
+  ]
+}

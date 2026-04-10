@@ -1,0 +1,43 @@
+{
+  "name": "ProjectCollaborator",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "assigned_role": {
+      "type": "string",
+      "enum": [
+        "Movement Director / Choreographer",
+        "Film Director",
+        "Dancer / Performer",
+        "DOP / Cinematographer",
+        "Stylist / Creative Director",
+        "Producer"
+      ]
+    },
+    "permission_level": {
+      "type": "string",
+      "enum": [
+        "owner",
+        "editor",
+        "contributor",
+        "viewer"
+      ],
+      "default": "contributor"
+    }
+  },
+  "required": [
+    "project_id",
+    "assigned_role"
+  ]
+}

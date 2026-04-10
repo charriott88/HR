@@ -1,0 +1,73 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "project_type": {
+      "type": "string",
+      "enum": [
+        "Stage Performance",
+        "Music Video",
+        "Fashion / Brand Film",
+        "Short Film",
+        "Hybrid"
+      ]
+    },
+    "context": {
+      "type": "string",
+      "enum": [
+        "Commissioned / Commercial",
+        "Funded",
+        "Self-initiated"
+      ]
+    },
+    "intended_outcome": {
+      "type": "string",
+      "enum": [
+        "Live performance",
+        "Film / video",
+        "Hybrid"
+      ]
+    },
+    "current_phase": {
+      "type": "string",
+      "enum": [
+        "R&D",
+        "Development",
+        "Rehearsal",
+        "Pre-shoot",
+        "Shoot",
+        "Post-production / Performance"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "archived"
+      ],
+      "default": "active"
+    },
+    "orientation": {
+      "type": "string",
+      "enum": [
+        "structured",
+        "open"
+      ],
+      "default": "structured"
+    },
+    "owner_id": {
+      "type": "string"
+    },
+    "alignment_complete": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "project_type"
+  ]
+}

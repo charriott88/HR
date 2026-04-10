@@ -1,0 +1,45 @@
+{
+  "name": "TimelineItem",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "rehearsal",
+        "shoot day",
+        "sharing",
+        "fitting",
+        "milestone",
+        "other"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "R&D",
+        "Development",
+        "Rehearsal",
+        "Pre-shoot",
+        "Shoot",
+        "Post-production / Performance"
+      ]
+    },
+    "date": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "label",
+    "date"
+  ]
+}

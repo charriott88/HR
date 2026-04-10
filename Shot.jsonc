@@ -1,0 +1,67 @@
+{
+  "name": "Shot",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "treatment_id": {
+      "type": "string"
+    },
+    "shot_id": {
+      "type": "string"
+    },
+    "orientation": {
+      "type": "string",
+      "enum": [
+        "structured",
+        "open"
+      ]
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    },
+    "what_happens": {
+      "type": "string"
+    },
+    "movement_intention": {
+      "type": "string"
+    },
+    "camera_action": {
+      "type": "string"
+    },
+    "spatial_logic": {
+      "type": "string"
+    },
+    "framing": {
+      "type": "string"
+    },
+    "what_exploring": {
+      "type": "string"
+    },
+    "body_relationship": {
+      "type": "string"
+    },
+    "camera_interpretation": {
+      "type": "string"
+    },
+    "protagonists": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "roles": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "project_id",
+    "orientation",
+    "shot_id"
+  ]
+}
